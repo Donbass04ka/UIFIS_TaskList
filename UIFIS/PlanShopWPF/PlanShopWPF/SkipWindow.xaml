@@ -1,0 +1,20 @@
+﻿<Window x:Class="PlanShopWPF.SkipWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlanShopWPF"
+        mc:Ignorable="d"
+        Title="SkipWindow" Height="450" Width="485">
+    <Grid HorizontalAlignment="Left" Width="891">
+        <Button x:Name="CreateBtn" Content="Добавить список " Margin="10,0,415,381" Click="Create_Click"/>
+        <TextBox Name="Search" Margin="10,58,600,343" Background="#FFE3FFDF" RenderTransformOrigin="0.5,0.5" />
+        <Button Name="SearchBtn" Content="Поиск списка" Click="SearchBtn_Click" Margin="303,58,415,343"/>
+        <DataGrid Name="ListGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="10,96,415,0" MouseDoubleClick="ListGrid_MouseDoubleClick" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название списка" Binding="{Binding Title}" Width="*"/>
+                <DataGridTextColumn Header="Дата создания" Binding="{Binding Data}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
